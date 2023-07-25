@@ -1,2 +1,1 @@
-# new-repository
-My new repo
+# The repo where I upload my code for studying
