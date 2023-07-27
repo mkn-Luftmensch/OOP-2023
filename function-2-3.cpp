@@ -14,7 +14,9 @@ void two_five_nine(int array[], int n){
             case 9:
                 num9++;
                 break;
+            default:
+                break;
         }
     }
-    cout<<"2:" << num2 << ";5:" << num5 << ";9:" << num9 << ";";
+    cout<<"2:" << num2 << ";5:" << num5 << ";9:" << num9 << ";" << endl;
 }
