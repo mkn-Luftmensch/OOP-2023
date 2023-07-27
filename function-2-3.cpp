@@ -2,7 +2,9 @@
 using namespace std;
 
 void two_five_nine(int array[], int n){
-    int num2, num5, num9=0;
+    int num2=0;
+    int num5=0;
+    int num9=0;
     for(int i=0; i<n; i++){
         switch (array[i]) {
             case 2:
@@ -13,8 +15,6 @@ void two_five_nine(int array[], int n){
                 break;
             case 9:
                 num9++;
-                break;
-            default:
                 break;
         }
     }
