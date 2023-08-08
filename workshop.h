@@ -6,6 +6,7 @@ void printArray(double* ptr, int size) {
     for(int i=0; i<size; i++){
         std::cout << ptr[i] << " ";
     }
+    std::cout<<std::endl;
 }
 
 double arrayMax(double* ptr, int size) {
