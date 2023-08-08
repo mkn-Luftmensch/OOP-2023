@@ -25,6 +25,7 @@ int main() {
     for( int i=0; i<4; i++) {
         cout << myDynamicArray[i] << " ";
     }
+    cout << endl;
     cout << arrayMax(myDynamicArray, 4);
     delete[] myDynamicArray;
 
