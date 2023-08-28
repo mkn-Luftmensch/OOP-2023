@@ -14,6 +14,10 @@ int Player::getHealth() {
     return Health;
 }
 
-void Player::takeDamage() {
-    cout << Name << " takes " << Damage << " damage. Remaining health: " << Health << "\n";
+int Player::getDamage() {
+    return Damage;
+}
+
+void Player::takeDamage(Player* opponent) {
+    cout << Name << " takes " << opponent->getDamage() << " damage. Remaining health: " << Health << "\n";
 }

@@ -14,9 +14,9 @@ class Player {
         void attack(Player* opponent, int damage);
         void takeDamage(int damage);
         string getName();
-        int setHealth();
+        int getDamage();
         int getHealth();
-        void takeDamage();
+        void takeDamage(Player* opponent);
 
 };
 

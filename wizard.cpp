@@ -4,6 +4,7 @@ using namespace std;
 Wizard::Wizard(string name, int health, int damage, int mana) : Player(name, health, damage), Mana(mana) {}
 
 void Wizard::castSpell(Player* opponent) {
-    attack(opponent, Mana);
-    cout << Name << " casts a spell on " << opponent->getName() << " for " << Mana << " damage.\n";
+    Damage = Mana;
+    attack(opponent, Damage);
+    cout << Name << " casts a spell on " << opponent->getName() << " for " << Damage << " damage.\n";
 }
