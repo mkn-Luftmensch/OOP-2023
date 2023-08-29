@@ -1,37 +1,73 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 #include "Vehicle.h"
 #include "Car.h"
 #include "Bus.h"
 #include "Motorbike.h"
 using namespace std;
+int main() {
+    vector<Vehicle*> vehicles;
 
-int main(){
-    int numCars, numBuses, numMotorbikes, numVehicles;
-    cout << "Enter total number of vehicles: ";
-    cin >> numVehicles;
-    Vehicle* vehicles[numVehicles];
-
-    cout << "Enter total number of cars: ";
+    int numCars, numBuses, numMotorbikes;
+    cout << "Enter the number of cars: ";
     cin >> numCars;
-    for(int i = 0 ;i<numCars;++i){
-        vehicles[i]= new Car(i);
-    }
-
-    cout << "Enter total number of buses: ";
+    cout << "Enter the number of buses: ";
     cin >> numBuses;
-    for(int i = 0 ;i<numBuses;++i){
-        vehicles[i]= new Bus(i);
-    }
-
-    cout << "Enter total number of motorbikes: ";
+    cout << "Enter the number of motorbikes: ";
     cin >> numMotorbikes;
-    for(int i = 0 ;i<numMotorbikes;++i){
-        vehicles[i]= new Motorbike(i);
+
+    for (int i = 0; i < numCars; ++i) {
+        vehicles.push_back(new Car(i + 1));
     }
 
-    for (int i=0; i<numVehicles; i++) {
-        cout << "The parking duration of vehicle " << vehicles[i]->getID() << " is " << vehicles[i]->getParkingDuration() << " seconds \n"; 
+    for (int i = 0; i < numBuses; ++i) {
+        vehicles.push_back(new Bus(i + 1));
     }
-    // delete[] vehicles;
+
+    for (int i = 0; i < numMotorbikes; ++i) {
+        vehicles.push_back(new Motorbike(i + 1));
+    }
+
+    for (const Vehicle* vehicle : vehicles) {
+        cout << "Vehicle ID: " << vehicle->getID() << ", Parking Duration: " << vehicle->getParkingDuration() << " seconds" << endl;
+    }
+
+    // Clean up the allocated memory
+    for (Vehicle* vehicle : vehicles) {
+        delete vehicle;
+    }
+
     return 0;
+
+    
+
+    // ARRAYYYYYYYY
+
+    // int numVehicles, numCars, numBuses, numMotorbikes;
+    // cout << "Enter the number of vehicles: ";
+    // cin >> numVehicles;
+    // Vehicle* vehicles[numVehicles];
+    // cout << "Enter the number of cars: ";
+    // cin >> numCars;
+    // cout << "Enter the number of buses: ";
+    // cin >> numBuses;
+    // cout << "Enter the number of motorbikes: ";
+    // cin >> numMotorbikes;
+    // for (int i = 0; i < numCars; ++i) {
+    //     vehicles[i] = new Car(i+1);
+    // }
+    // for (int i = 0; i < numBuses; ++i) {
+    //     vehicles[i] = new Bus(i+1);
+    // }
+    // for (int i = 0; i < numMotorbikes; ++i) {
+    //     vehicles[i] = new Motorbike(i+1);
+    // }
+
+    // for (int i = 0; i < numVehicles; ++i) {
+    //     cout << "Vehicle ID: " << vehicles[i]->getID() << ", Parking Duration: " << vehicles[i]->getParkingDuration() << " seconds" << endl;
+    // }
+    // for (int i = 0; i < numVehicles; ++i) {
+    //     delete vehicles[i];
+    // }
+    // return 0;
 }

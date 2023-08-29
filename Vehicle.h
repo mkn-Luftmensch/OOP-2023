@@ -10,8 +10,8 @@ class Vehicle {
         int ID;
     public:
         Vehicle(int id);
-        int getID();
-        virtual int getParkingDuration();
+        int getID() const;
+        virtual int getParkingDuration() const = 0;
 };
 
 #endif

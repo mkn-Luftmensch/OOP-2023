@@ -3,6 +3,6 @@ using namespace std;
 
 Car::Car(int id) : Vehicle(id) {}
 
-int Car::getParkingDuration() {
-    return  (time(nullptr) - timeOfEntry)*0.9;
+int Car::getParkingDuration() const {
+    return static_cast<int> (time(nullptr) - timeOfEntry)*0.9; //statics_cast<int> = convert to int
 }
