@@ -28,7 +28,7 @@ int main() {
         vehicles.push_back(new Motorbike(i + 1));
     }
 
-    for (const Vehicle* vehicle : vehicles) {
+    for (Vehicle* vehicle : vehicles) {
         cout << "Vehicle ID: " << vehicle->getID() << ", Parking Duration: " << vehicle->getParkingDuration() << " seconds" << endl;
     }
 

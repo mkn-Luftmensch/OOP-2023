@@ -4,6 +4,6 @@ using namespace std;
 Vehicle::Vehicle(int id) : ID(id) {
     timeOfEntry = time(nullptr);
 }
-int Vehicle::getID() const{
+int Vehicle::getID() {
     return ID;
 }
