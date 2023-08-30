@@ -10,12 +10,12 @@ int main() {
 
     while (parkingLot.getCount() < maxCapacity) {
         int vehicleType;
-        std::cout << "Enter vehicle type (1: Car, 2: Bus, 3: Motorbike): ";
-        std::cin >> vehicleType;
+        cout << "Enter vehicle type (1: Car, 2: Bus, 3: Motorbike): ";
+        cin >> vehicleType;
 
         int vehicleID;
-        std::cout << "Enter vehicle ID: ";
-        std::cin >> vehicleID;
+        cout << "Enter vehicle ID: ";
+        cin >> vehicleID;
 
         Vehicle* newVehicle;
         if (vehicleType == 1) {
@@ -25,7 +25,7 @@ int main() {
         } else if (vehicleType == 3) {
             newVehicle = new Motorbike(vehicleID);
         } else {
-            std::cout << "Invalid vehicle type. Skipping..." << std::endl;
+            cout << "Invalid vehicle type. Skipping..." << endl;
             continue;
         }
 
@@ -33,8 +33,8 @@ int main() {
     }
 
     int unparkVehicleID;
-    std::cout << "Enter vehicle ID to unpark: ";
-    std::cin >> unparkVehicleID;
+    cout << "Enter vehicle ID to unpark: ";
+    cin >> unparkVehicleID;
     parkingLot.unparkVehicle(unparkVehicleID);
 
     return 0;
