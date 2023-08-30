@@ -48,6 +48,7 @@ int main() {
     cin >> numVehicles;
     Vehicle* vehicles[numVehicles];
     int vehicleCount = 0;
+    
     cout << "Enter the number of cars: ";
     cin >> numCars;
     cout << "Enter the number of buses: ";

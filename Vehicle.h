@@ -9,9 +9,10 @@ class Vehicle {
         time_t timeOfEntry;
         int ID;
     public:
+        Vehicle();
         Vehicle(int id);
         int getID();
-        virtual int getParkingDuration() = 0;
+        virtual int getParkingDuration(); // =0
 };
 
 #endif
