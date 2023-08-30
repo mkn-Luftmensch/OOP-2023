@@ -1,36 +1,41 @@
-#include <bits/stdc++.h>
+#include <iostream>
 #include "ParkingLot.h"
 #include "Car.h"
 #include "Bus.h"
 #include "Motorbike.h"
 
-using namespace std;
-
 int main() {
-    ParkingLot park(10);
-    string vhc;
-    int id;
-    for(int i=0; i<10; i++){
-        cout << "Type of vehicles: \n";
-        cin >> vhc;
-        if(vhc == "car") {
-            park.parkVehicle(new Car(i+1));
+    int maxCapacity = 10;
+    ParkingLot parkingLot(maxCapacity);
+
+    while (parkingLot.getCount() < maxCapacity) {
+        int vehicleType;
+        std::cout << "Enter vehicle type (1: Car, 2: Bus, 3: Motorbike): ";
+        std::cin >> vehicleType;
+
+        int vehicleID;
+        std::cout << "Enter vehicle ID: ";
+        std::cin >> vehicleID;
+
+        Vehicle* newVehicle;
+        if (vehicleType == 1) {
+            newVehicle = new Car(vehicleID);
+        } else if (vehicleType == 2) {
+            newVehicle = new Bus(vehicleID);
+        } else if (vehicleType == 3) {
+            newVehicle = new Motorbike(vehicleID);
+        } else {
+            std::cout << "Invalid vehicle type. Skipping..." << std::endl;
+            continue;
         }
-        if(vhc == "bus") {
-            park.parkVehicle(new Bus(i+1));
-        }
-        if(vhc == "motorbike") {
-            park.parkVehicle(new Motorbike(i+1));
-        }
+
+        parkingLot.parkVehicle(newVehicle);
     }
-    vhc = "yes";
-    cout << "Unpark? \n";
-    cin >> vhc;
-    while(vhc == "yes"){
-        cout << "ID? \n";
-        cin >> id;
-        park.unparkVehicle(id);
-    }
+
+    int unparkVehicleID;
+    std::cout << "Enter vehicle ID to unpark: ";
+    std::cin >> unparkVehicleID;
+    parkingLot.unparkVehicle(unparkVehicleID);
 
     return 0;
 }

@@ -7,7 +7,7 @@
 class ParkingLot
 {
     protected:
-        Vehicle* vehicles;   
+        Vehicle** vehicles;   
         int maxCapacity;
         int currentVehicles;
     public:
