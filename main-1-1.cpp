@@ -40,42 +40,35 @@ int main() {
     // return 0;
 
     
-    int maxVehicles = 100; // Set the maximum number of vehicles
 
-    Vehicle* vehicles[maxVehicles]; // Declare an array of pointers to Vehicle
+    // ARRAYYYYYYYY
 
-    int numCars, numBuses, numMotorbikes;
-    std::cout << "Enter the number of cars: ";
-    std::cin >> numCars;
-    std::cout << "Enter the number of buses: ";
-    std::cin >> numBuses;
-    std::cout << "Enter the number of motorbikes: ";
-    std::cin >> numMotorbikes;
-
-    int vehicleCount = 0; // Keep track of the total number of vehicles
-
+    int numVehicles, numCars, numBuses, numMotorbikes;
+    cout << "Enter the number of vehicles: ";
+    cin >> numVehicles;
+    Vehicle* vehicles[numVehicles];
+    int vehicleCount = 0;
+    cout << "Enter the number of cars: ";
+    cin >> numCars;
+    cout << "Enter the number of buses: ";
+    cin >> numBuses;
+    cout << "Enter the number of motorbikes: ";
+    cin >> numMotorbikes;
     for (int i = 0; i < numCars; ++i) {
-        vehicles[vehicleCount++] = new Car(i + 1);
+        vehicles[vehicleCount++] = new Car(i+1);
     }
-
     for (int i = 0; i < numBuses; ++i) {
-        vehicles[vehicleCount++] = new Bus(i + 1);
+        vehicles[vehicleCount++] = new Bus(i+1);
     }
-
     for (int i = 0; i < numMotorbikes; ++i) {
-        vehicles[vehicleCount++] = new Motorbike(i + 1);
+        vehicles[vehicleCount++] = new Motorbike(i+1);
     }
 
-    for (int i = 0; i < vehicleCount; ++i) {
-        Vehicle* vehicle = vehicles[i];
-        std::cout << "Vehicle ID: " << vehicle->getID() << ", Parking Duration: " << vehicle->getParkingDuration() << " seconds" << std::endl;
+    for (int i = 0; i < numVehicles; ++i) {
+        cout << "Vehicle ID: " << vehicles[i]->getID() << ", Parking Duration: " << vehicles[i]->getParkingDuration() << " seconds" << endl;
     }
-
-    // Clean up the allocated memory
-    for (int i = 0; i < vehicleCount; ++i) {
+    for (int i = 0; i < numVehicles; ++i) {
         delete vehicles[i];
     }
-
     return 0;
 }
-
