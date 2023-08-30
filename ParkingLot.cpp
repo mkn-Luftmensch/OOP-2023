@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-ParkingLot::ParkingLot(int capacity) : maxCapacity(capacity), vehicles(new Vehicle*[maxCapacity]), currentVehicles(0), maxParkingDuration(0), overStayingCount(0){}
+ParkingLot::ParkingLot(int capacity) : maxCapacity(capacity), vehicles(new Vehicle*[maxCapacity]), currentVehicles(0){}
 
 int ParkingLot::getCount() {return currentVehicles;}
 
@@ -25,14 +25,14 @@ void ParkingLot::unparkVehicle(int id){
     cout << "Vehicle not in the lot";
 }
 
-int ParkingLot::countOverstayingVehicles(int maxDuration) {
-    maxParkingDuration = maxDuration;
-    for (int i = 0; i < currentVehicles; i++)
-    {
-        if(vehicles[i]->getParkingDuration() > maxParkingDuration) overStayingCount++;
+int ParkingLot::countOverstayingVehicles(int maxParkingDuration) {
+    int overstayingCount = 0;
+    for (int i = 0; i < currentVehicles; ++i) {
+        if (vehicles[i]->getParkingDuration() > maxParkingDuration) {
+            overstayingCount++;
+        }
     }
-    return overStayingCount;
-
+    return overstayingCount;
 }
 
 

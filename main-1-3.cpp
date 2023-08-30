@@ -5,22 +5,41 @@
 #include "Motorbike.h"
 
 int main() {
-    ParkingLot lot(10);
-    Vehicle* newVehicle;
+    int maxCapacity = 10;
+    int maxParkingDuration = 15;
+    ParkingLot parkingLot(maxCapacity);
 
-    for (int i=1; i<=5; i++) {
-        newVehicle = new Car(i);
-        lot.parkVehicle(newVehicle);
+    while (parkingLot.getCount() < maxCapacity) {
+        int vehicleType;
+        cout << "Enter vehicle type (1: Car, 2: Bus, 3: Motorbike): ";
+        cin >> vehicleType;
+
+        int vehicleID;
+        cout << "Enter vehicle ID: ";
+        cin >> vehicleID;
+
+        Vehicle* newVehicle;
+        if (vehicleType == 1) {
+            newVehicle = new Car(vehicleID);
+        } else if (vehicleType == 2) {
+            newVehicle = new Bus(vehicleID);
+        } else if (vehicleType == 3) {
+            newVehicle = new Motorbike(vehicleID);
+        } else {
+            cout << "Invalid vehicle type. Skipping..." << endl;
+            continue;
+        }
+
+        parkingLot.parkVehicle(newVehicle);
     }
-    for (int i=6; i<=8; i++) {
-        newVehicle = new Bus(i);
-        lot.parkVehicle(newVehicle);
-    }
-    for (int i=9; i<=10; i++) {
-        newVehicle = new Motorbike(i);
-        lot.parkVehicle(newVehicle);
-    }
-    cout << lot.countOverstayingVehicles(15);
-    
+
+    int overstayingCount = parkingLot.countOverstayingVehicles(maxParkingDuration);
+    cout << "Number of vehicles overstaying for more than " << maxParkingDuration << " seconds: " << overstayingCount << endl;
+
+    int unparkVehicleID;
+    cout << "Enter vehicle ID to unpark: ";
+    cin >> unparkVehicleID;
+    parkingLot.unparkVehicle(unparkVehicleID);
+
     return 0;
 }

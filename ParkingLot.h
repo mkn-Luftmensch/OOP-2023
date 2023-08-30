@@ -10,7 +10,6 @@ class ParkingLot
         Vehicle** vehicles;   
         int maxCapacity;
         int currentVehicles;
-        int maxParkingDuration;
         int overStayingCount;
 
     public:
