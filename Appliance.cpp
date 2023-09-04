@@ -14,5 +14,8 @@ void Appliance::setPowerRating(int powerRating){
 int Appliance::getPowerRating(){
     return powerRating;
 }
+double Appliance::getPowerConsumption(){
+    return 0;
+}
 
 

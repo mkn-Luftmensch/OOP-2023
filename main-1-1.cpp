@@ -4,11 +4,9 @@
 using namespace std;
 
 int main(){
-    Appliance* TV;
-    cout << TV->getPowerRating();
-    // TV->turnOff();
-    // TV->turnOn();
-
+    Appliance* appliance = new Appliance(100);
+    cout << appliance->getPowerConsumption();
+    appliance->turnOn();
     return 0;
     
 
