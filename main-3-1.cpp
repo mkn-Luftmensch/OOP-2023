@@ -1,5 +1,6 @@
 #include "House.h"
 #include "Fridge.h"
+#include "Appliance.h"
 #include "TV.h"
 
 #include <bits/stdc++.h>
@@ -21,4 +22,8 @@ int main(){
     cout << house.getTotalPowerConsumption() << endl;
 
     return 0;
+
+    // if you don't use Fridge fridge = new Fridge(100), you don't need to delete each element in the array 
+    // because it is not dynamically created. You only need to delete the array by delete[] appliances
+
 }

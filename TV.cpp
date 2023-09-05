@@ -16,4 +16,3 @@ double TV::getScreenSize(){
 double TV::getPowerConsumption(){
     return get_powerRating()*(this->screenSize / 10);
 }
-
