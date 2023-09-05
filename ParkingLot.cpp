@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-ParkingLot::ParkingLot(int capacity) : maxCapacity(capacity), vehicles(new Vehicle*[maxCapacity]), currentVehicles(0){}
+ParkingLot::ParkingLot(int capacity) : maxCapacity(capacity), vehicles(new Vehicle*[capacity]), currentVehicles(0){}
 
 int ParkingLot::getCount() {return currentVehicles;}
 
