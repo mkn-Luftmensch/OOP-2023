@@ -5,6 +5,3 @@ int Vehicle::getID(){
     return _ID;
 }
 
-// int Vehicle::getParkingDuration() {
-//     return time(nullptr)-_timeOfEntry;
-// }
