@@ -9,12 +9,13 @@ void Tesla::chargeBattery(int mins){
 }
 
 void Tesla::drive(int kms){
-    for(int i=1; i<=kms; i++){
-        if(batteryPercentage>0){
-            emissions+=74;
-            batteryPercentage-=0.2;
-        }
-        else return;
+    float batteryLost = 0.2*kms;
+    batteryPercentage-=batteryLost;
+    if(batteryPercentage>=0){
+        emissions=74*kms;
+    }
+    else {
+        emissions = 74*500;
     }
 }
 
