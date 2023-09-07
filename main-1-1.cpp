@@ -8,7 +8,7 @@ int main(){
 
     cout << myCar.get_price() << endl;
 
-    myCar.set_emissions(10);
+    // myCar.set_emissions(10);
     cout << myCar.get_emisisons() << endl;
 
     myCar.drive(10);
