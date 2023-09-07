@@ -9,7 +9,10 @@ void Ford::drive(int kms){
     float litresUsed = kms*0.2;
     litresOfFuel = litresOfFuel-litresUsed;
     if(litresOfFuel>=0) emissions=234*kms;
-    else emissions=300*234;
+    else {
+        emissions=300*234;
+        litresOfFuel=0;
+    }
 }
 
 void Ford::refuel(int litres){
