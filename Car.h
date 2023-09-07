@@ -12,7 +12,7 @@ class Car {
         void set_price(int price);
         int get_price();
         void set_emissions(int emissions);
-        int get_emissisons();
+        int get_emissions();
 };
 
 #endif
