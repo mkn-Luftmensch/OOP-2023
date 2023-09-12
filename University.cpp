@@ -6,6 +6,7 @@ University::University()
     location ="";
     maxCourses=0;
     currentCourses=0;
+    courses = new Course[maxCourses];
 } 
 
 University::University(int maxCourses, string name, string location, Gradebook book) {
@@ -13,6 +14,8 @@ University::University(int maxCourses, string name, string location, Gradebook b
     this->name = name;
     this->location = location;
     this->gradebook = book;
+    currentCourses = 0;
+    courses = new Course[maxCourses];
 }
 
 void University::addCourse(int courseCapacity, int id, string name){
