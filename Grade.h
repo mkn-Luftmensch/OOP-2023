@@ -1,6 +1,6 @@
 #ifndef GRADE_H
 #define GRADE_H
-#include<string>
+#include<bits/stdc++.h>
 using namespace std;
 class Grade {
     private:
