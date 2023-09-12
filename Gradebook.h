@@ -12,7 +12,7 @@ class Gradebook {
         Gradebook();
         Gradebook(int maxGrades);
         void addGrade(int stud_id, int course_id, string assignment, int value);
-        // ~Gradebook();
+        ~Gradebook();
 };
 
 #endif

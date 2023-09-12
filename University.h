@@ -8,14 +8,14 @@ using namespace std;
 class University {
     private:
         Course* courses;
-        Gradebook gradebook;
+        Gradebook* gradebook;
         string name;
         string location;
         int maxCourses;
         int currentCourses;
     public:
         University();
-        University(int maxCourses, string name, string location, Gradebook book);
+        University(int maxCourses, string name, string location);
         void addCourse(int courseCapacity, int id, string name);
         ~University();
 };

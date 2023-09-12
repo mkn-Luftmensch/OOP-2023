@@ -12,7 +12,7 @@ int main() {
     COMP_SCI.addPerson(&Mike);
     Grade mknGrade(2103, 1106, "OOP", 100);
     gradebook.addGrade(2103, 1106, "OOP", 100);
-    University UoA(17, "University of Adelaide", "Adelaide", gradebook);
+    University UoA(17, "University of Adelaide", "Adelaide");
     // UoA.addCourse(22, 1106, "Object Oriented Programming");
 
     

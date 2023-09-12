@@ -2,6 +2,7 @@
 #define GRADE_H
 #include<bits/stdc++.h>
 using namespace std;
+
 class Grade {
     private:
         string assignment;

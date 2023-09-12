@@ -9,11 +9,11 @@ University::University()
     courses = new Course[maxCourses];
 } 
 
-University::University(int maxCourses, string name, string location, Gradebook book) {
+University::University(int maxCourses, string name, string location) {
     this->maxCourses = maxCourses;
     this->name = name;
     this->location = location;
-    this->gradebook = book;
+    gradebook = new Gradebook;
     currentCourses = 0;
     courses = new Course[maxCourses];
 }
@@ -25,4 +25,7 @@ void University::addCourse(int courseCapacity, int id, string name){
     }
 }
 
-University::~University() {delete[] courses;}
+University::~University() {
+    delete[] courses;
+    delete gradebook;
+}

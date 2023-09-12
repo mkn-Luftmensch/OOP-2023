@@ -1,6 +1,7 @@
 #include "Gradebook.h"
 
-Gradebook::Gradebook() : grades(new Grade[0]), currentGrades(0) {}
+Gradebook::Gradebook() : currentGrades(0) {
+}
 Gradebook::Gradebook(int maxGrades) {
     grades = new Grade[maxGrades];
     currentGrades = 0;
@@ -12,6 +13,6 @@ void Gradebook::addGrade(int stud_id, int course_id, string assignment, int valu
         currentGrades++;
     }
 } 
-// Gradebook::~Gradebook() {
-//     delete[] grades;
-// }
+Gradebook::~Gradebook() {
+    delete[] grades;
+}
