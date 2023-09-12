@@ -1,4 +1,8 @@
 #include "Student.h"
 
-Student::Student() : id(0), Person(){}
-Student::Student(int id, string name) : id(id), Person(name){}
+Student::Student() : Person() {
+    id = 0;
+}
+Student::Student(int id, string name) : Person(name){
+    this->id=id;
+}
