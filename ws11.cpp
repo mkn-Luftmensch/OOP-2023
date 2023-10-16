@@ -3,46 +3,60 @@
 #include <string>
 #include <vector>
 using namespace std;
+
 // vector of int.
 // used to store the records
 typedef vector<int> Records;
-// https://www.cplusplus.com/doc/tutorial/files/
+
 class RecordsManager {
 private:
     fstream _file;
     string _filename;
+
 public:
     RecordsManager(string filename) : _filename(filename) {}
+
     void read(Records &records) {
         _file.open(_filename, ios::in);
-        if (_file.is_open()) {
-            string line;
+
+        string line;
+        try {
             while (std::getline(_file, line)) {
                 try {
-                    records.push_back(stoi(line));
-                } catch (const invalid_argument msg) {
-                    cerr << "Invalid integer value in file: " << msg.what() << endl;
-                } catch (const out_of_range msg) {
-                    cerr << "Out of range integer value in file: " << msg.what() << endl;
+                    int value = stoi(line);
+                    records.push_back(value);
+                } catch (const invalid_argument &ex) {
+                    cerr << "Invalid integer value in file: " << ex.what() << endl;
                 }
             }
-            _file.close();
+        } catch (const out_of_range &ex) {
+            cerr << "Out of range integer value in file: " << ex.what() << endl;
+            _file.close(); 
+            throw;          
         }
+
+        _file.close();
     }
 };
+
 int main() {
-    RecordsManager receordM("test_clean.txt");
-    // RecordsManager receordM("test_corrupt1.txt");
-    // RecordsManager receordM("test_corrupt2.txt");
+    RecordsManager recordM("test_corrupt2.txt");
     Records myRecords;
-    // reads records
-    receordM.read(myRecords);
-    // calculate and print out the sum
-    int sum = 0;
-    for (int i = 0; i < myRecords.size(); i++) {
-        cout << myRecords[i] << endl;
-        sum += myRecords[i];
+
+    try {
+        // reads records with exception handling
+        recordM.read(myRecords);
+
+        // calculate and print out the sum
+        int sum = 0;
+        for (int i = 0; i < myRecords.size(); i++) {
+            cout << myRecords[i] << endl;
+            sum += myRecords[i];
+        }
+        cout << "Sum: " << sum << endl;
+    } catch (const exception &ex) {
+        cerr << "Error: " << ex.what() << endl;
     }
-    cout << sum << endl;
+
     return 0;
 }
