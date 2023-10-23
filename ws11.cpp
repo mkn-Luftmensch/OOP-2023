@@ -40,7 +40,7 @@ public:
 };
 
 int main() {
-    RecordsManager recordM("test_corrupt2.txt");
+    RecordsManager recordM("test_clean.txt");
     Records myRecords;
 
     try {
