@@ -4,7 +4,7 @@
 using namespace std;
 
 class GameEntity {
-    private:
+    protected:
         tuple<int, int> position;
         char type;
     public:
@@ -12,8 +12,19 @@ class GameEntity {
             position = make_tuple(x, y);
             this->type=type;
         }
-        tuple<int, int> getPos(){return position;}
+        tuple<int, int> getPos(){
+            return position;
+        }
         char getType(){return type;}
+
+        // void setPos(int x, int y){
+        //     position = make_tuple(x, y);
+        // }
+        // void setType(char type) {
+        //     this->type = type;
+        // }
+
+
 };
 
 #endif
