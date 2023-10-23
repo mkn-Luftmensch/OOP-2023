@@ -1,3 +1,6 @@
+#ifndef SHIP_H
+#define SHIP_H
+
 #include "GameEntity.h"
 
 class Ship : public GameEntity {
@@ -8,3 +11,5 @@ class Ship : public GameEntity {
             get<1>(position) += dy;
         }
 };
+
+#endif
