@@ -8,9 +8,12 @@ class GameEntity {
         tuple<int, int> position;
         char type;
     public:
-        GameEntity(int x, int y, char type);
-        tuple<int, int> getPos();
-        char getType();
+        GameEntity(int x, int y, char type){
+            position = make_tuple(x, y);
+            this->type=type;
+        }
+        tuple<int, int> getPos(){return position;}
+        char getType(){return type;}
 };
 
 #endif
