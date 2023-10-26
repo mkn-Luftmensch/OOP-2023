@@ -4,7 +4,7 @@
 using namespace std;
 
 class Cell {
-    private:
+    protected:
         tuple<int, int> position;
         char type;
 
