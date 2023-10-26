@@ -3,15 +3,19 @@
 #include "Effect.h"
 #include "Cell.h"
 class Trap : public Cell, Effect {
+    private:
+        bool status;
     public:
-        Trap(int x, int y) : Cell(x, y, 'T'){}
+        Trap(int x, int y) : Cell(x, y, 'T'){
+            status = true;
+        }
         bool isActive() {
-            if(get<0>(position) == -1 && get<1>(position) == -1) return false;
-            else return true;
+            if(status == true) return true;
+            else return false;
         }
         void apply(Cell& cell) override {
             cell.setType('T');
-            setPos(-1, -1);
+            status = false;
         }
 };
 #endif 
