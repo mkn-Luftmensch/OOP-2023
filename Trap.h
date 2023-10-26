@@ -6,12 +6,12 @@ class Trap : public Cell, Effect {
     public:
         Trap(int x, int y) : Cell(x, y, 'T'){}
         bool isActive() {
-            if(type == 'T') return true;
-            else return false;
+            if(get<0>(position) == -1 && get<1>(position) == -1) return false;
+            else return true;
         }
         void apply(Cell& cell) override {
             cell.setType('T');
-            type = 'X';
+            setPos(-1, -1);
         }
 };
 #endif 
