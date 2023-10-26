@@ -48,7 +48,7 @@ class Game {
                     }
                 }
             }
-            cout << "Maximum number of iterations reached. Game over.";
+            cout << "Maximum number of iterations reached. Game over." << endl;
         }
 };
 
