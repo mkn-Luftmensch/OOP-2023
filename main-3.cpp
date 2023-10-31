@@ -2,7 +2,7 @@
 
 int main() {
     Game AvoidTheTrap;
-    AvoidTheTrap.initGame(10, 7, 17, 17);
-    AvoidTheTrap.gameLoop(8, 5.0);
+    AvoidTheTrap.initGame(3, 1, 5, 5);
+    AvoidTheTrap.gameLoop(5, 1.0);
     return 0;
 }
